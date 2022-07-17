@@ -6,7 +6,7 @@ namespace LambdaUserRegistration
     {
         static void Main(string[] args)
         {
-            //method.class
+           //method.class
             UserRegistration.CheckUserPassword();
         }
     }
