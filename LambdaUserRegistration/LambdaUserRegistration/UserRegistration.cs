@@ -10,20 +10,19 @@ namespace LambdaUserRegistration
     public class UserRegistration
     {
 
-        //Creating method for checking password that have min 8 characters ,atleast 1 uppercase, 1 numeric number & 1 special character
-        public static void CheckUserPassword()
+        //Creating method for checking Email Sample
+        public static void CheckEmailSample()
         {
-            Console.WriteLine("Enter Password- ");
-            string password = Console.ReadLine();
-            string passwordpattern = @"^(?=.*[A-Z])(?=.*[@#$!%^&-+=()])(?=.*[0-9])(?=.*[a-z]).{8,}$";
+            Console.WriteLine("Enter Email- ");
+            string emailsample = Console.ReadLine();
+            string emailsamplepattern = @"^([a-z]{3}([\.\+\-0-9]*)@[a-z0-9]{1,}.[a-z]{3,}[.a-z]*)";
 
             //using lambda expression 
-            Func<string, bool> Validfirstname = p => Regex.IsMatch(password, passwordpattern);
+            Func<string, bool> ValidEmail = p => Regex.IsMatch(emailsample, emailsamplepattern);
 
-            bool result = Validfirstname(password);
+            bool result = ValidEmail(emailsample);
             Console.WriteLine(result);
 
         }
-
-    }  
+    }
 }
