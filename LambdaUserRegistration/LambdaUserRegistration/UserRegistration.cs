@@ -9,21 +9,25 @@ namespace LambdaUserRegistration
 {
     public class UserRegistration
     {
-        public static void CheckEmail()
+
+        //Creating method for checking Mobile Format
+        public static void CheckMobileNumber()
         {
-            Console.WriteLine("Enter Email- ");
-            string email = Console.ReadLine();
-            string emailpattern = @"^([A-Za-z]{3,}([.a-z]*)@[a-z]{2,}[.][a-z]{2,3}([.a-z]*))$";
+            Console.WriteLine("Enter Mobile Number- ");
+            string mobnum = Console.ReadLine();
+            string MobNumpattern = @"^[1-9]{2,}[' '][7-9]{1}[0-9]{9}$";
 
-            //Validate the Email byusing Lambda Expression
-            Func<string, bool> ValidEmail = p => Regex.IsMatch(email, emailpattern);
+            //using lambda expression to validate the Mobile Number
+            Func<string, bool> Validfirstname = p => Regex.IsMatch(mobnum, MobNumpattern);
 
-            bool result = ValidEmail(email);
+            bool result = Validfirstname(mobnum);
             Console.WriteLine(result);
 
 
 
+
+
         }
-    
+
     }  
 }
