@@ -9,20 +9,21 @@ namespace LambdaUserRegistration
 {
     public class UserRegistration
     {
-        public static void CheckLastName()
+        public static void CheckEmail()
         {
-            Console.WriteLine("Enter your Last Name- ");
-            string lastname = Console.ReadLine();
-            string lastnamepattern = @"^[A-Z]{1}[a-z]{2,}$";
+            Console.WriteLine("Enter Email- ");
+            string email = Console.ReadLine();
+            string emailpattern = @"^([A-Za-z]{3,}([.a-z]*)@[a-z]{2,}[.][a-z]{2,3}([.a-z]*))$";
 
-            //Validate the Lastname byusing Lambda Expression  
-            Func<string, bool> Validfirstname = p => Regex.IsMatch(lastname, lastnamepattern);
+            //Validate the Email byusing Lambda Expression
+            Func<string, bool> ValidEmail = p => Regex.IsMatch(email, emailpattern);
 
-            bool result = Validfirstname(lastname);
+            bool result = ValidEmail(email);
             Console.WriteLine(result);
 
 
-            
+
         }
-    }
+    
+    }  
 }

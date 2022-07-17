@@ -7,7 +7,7 @@ namespace LambdaUserRegistration
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to User Registrtion Program by using Lambda ");
-            UserRegistration.CheckLastName();
+            UserRegistration.CheckEmail();
         }
     }
 }
