@@ -10,18 +10,19 @@ namespace LambdaUserRegistration
     public class UserRegistration
     {
 
-        //Creating method for checking Mobile Format
-        public static void CheckMobileNumber()
+        //Creating method for checking password that have min 8 characters
+        public static void CheckUserPassword()
         {
-            Console.WriteLine("Enter Mobile Number- ");
-            string mobnum = Console.ReadLine();
-            string MobNumpattern = @"^[1-9]{2,}[' '][7-9]{1}[0-9]{9}$";
+            Console.WriteLine("Enter Password- ");
+            string password = Console.ReadLine();
+            string passwordpattern = @"^[a-zA-Z]{8,}$";
 
-            //using lambda expression to validate the Mobile Number
-            Func<string, bool> Validfirstname = p => Regex.IsMatch(mobnum, MobNumpattern);
+            //using lambda expression to validate the password 
+            Func<string, bool> Validfirstname = p => Regex.IsMatch(password, passwordpattern);
 
-            bool result = Validfirstname(mobnum);
+            bool result = Validfirstname(password);
             Console.WriteLine(result);
+
 
 
 
